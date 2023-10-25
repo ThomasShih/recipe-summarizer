@@ -10,6 +10,10 @@ python = "^3.11"
 langchain = "^0.0.322"
 fastapi = "^0.104.0"
 uvicorn = "^0.23.2"
+cohere = "^4.32"
+python-dotenv = "^1.0.0"
+pydantic = "^2.4.2"
+html2text = "^2020.1.16"
 
 
 [build-system]
