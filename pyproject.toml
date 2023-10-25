@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "recipe-summarizer"
+version = "0.1.0"
+description = ""
+authors = ["Thomas Shih <55861476+ThomasShih@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.322"
+fastapi = "^0.104.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
