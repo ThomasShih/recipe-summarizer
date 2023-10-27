@@ -17,6 +17,7 @@ def extract_from_url(url: str) -> str:
 
     docs = loader.load()
     docs_transformed = html2text.transform_documents(docs)
+    # TODO: We don't want to do this, lets figure out a different way
     content = docs_transformed[0].page_content[:4000]
 
     return content
