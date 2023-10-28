@@ -51,6 +51,5 @@ sequential_chain = SimpleSequentialChain(
     verbose=True,
 )
 
-SystemMessage
 def summarize_recipe(page_content: str):
     return sequential_chain.run(page_content)
