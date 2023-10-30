@@ -8,24 +8,24 @@ co = cohere.Client(os.getenv("COHERE_API_KEY"))
 def embed_title(title) -> list[float]:
     return co.embed(
         texts=[title],
-        model='embed-english-v2.0',
+        model="embed-english-v2.0",
     ).embeddings[0]
 
 
 def summarize_recipe(text, store=False) -> str:
-    response = co.summarize( 
+    response = co.summarize(
         text=f"Extract all the relevant steps to make the recipe, include no redundant information: {text}",
-        length='long',
-        format='bullets',
-        model='summarize-xlarge',
+        length="long",
+        format="bullets",
+        model="summarize-xlarge",
         temperature=0.3,
-    ) 
+    )
 
     if store:
         # Do we even need this summarize step? Probablly not, right?
         title = co.summarize(
             text=f"Generate a title for this recipe: {text}, one sentence",
-            length='short',
+            length="short",
         )
         # Create a title for the recipe and then store it in the database
         vectors = embed_title(title.summary)
